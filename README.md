@@ -1,6 +1,16 @@
 ## About this repository
  We demonstrate the effectiveness of using Hybrid Deep Reinforcement Learning architecture for rough terrain navigation of an ackermann-steered platform called AgileX HunterSE. The algorithm combines DRL and LQR  controller and is deployed on NVIDIA's Isaac Sim simulator. 
  Following are the instructions to replicate the scenario. 
+
+ 
+
+
+https://github.com/dhruvkm2402/Hybrid_Deep_Reinforcement_Learning_RoughTerrain/assets/99369975/bafface1-6632-4789-8079-77b727687265
+
+
+https://github.com/dhruvkm2402/Hybrid_Deep_Reinforcement_Learning_RoughTerrain/assets/99369975/998968f1-5e92-431b-b2b4-f48adca7ad45
+
+
  
 # Omniverse Isaac Gym Reinforcement Learning Environments for Isaac Sim
 
