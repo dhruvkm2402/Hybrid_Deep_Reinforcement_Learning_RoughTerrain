@@ -1,10 +1,14 @@
+## About this repository
+ We demonstrate the effectiveness of using Hybrid Deep Reinforcement Learning architecture for rough terrain navigation of an ackermann-steered platform called AgileX HunterSE. The algorithm combines DRL and LQR  controller and is deployed on NVIDIA's Isaac Sim simulator. 
+ Following are the instructions to replicate the scenario. 
+ 
 # Omniverse Isaac Gym Reinforcement Learning Environments for Isaac Sim
 
 *PLEASE NOTE: Version 4.0.0 will be the last release of OmniIsaacGymEnvs. Moving forward, OmniIsaacGymEnvs will be merging with IsaacLab (https://github.com/isaac-sim/IsaacLab). All future updates will be available as part of the IsaacLab repository.*
 
 For tutorials on migrating to IsaacLab, please visit: https://isaac-sim.github.io/IsaacLab/source/migration/migrating_from_omniisaacgymenvs.html.
 
-## About this repository
+
 
 This repository contains Reinforcement Learning examples that can be run with the latest release of [Isaac Sim](https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/overview.html). RL examples are trained using PPO from [rl_games](https://github.com/Denys88/rl_games) library and examples are built on top of Isaac Sim's `omni.isaac.core` and `omni.isaac.gym` frameworks.
 
@@ -197,10 +201,6 @@ Then, training can be launched from the container with:
 /isaac-sim/python.sh scripts/rlgames_train.py task=Ant headless=True
 ```
 
-### Isaac Sim Automator
-
-Cloud instances for AWS, Azure, or GCP can be setup using [Isaac Automator](https://github.com/isaac-sim/IsaacAutomator?tab=readme-ov-file#omniverse-isaac-gym-environments).
-
 ## Livestream
 
 OmniIsaacGymEnvs supports livestream through the [Omniverse Streaming Client](https://docs.omniverse.nvidia.com/app_streaming-client/app_streaming-client/overview.html). To enable this feature, add the commandline argument `enable_livestream=True`:
@@ -217,22 +217,6 @@ Connect from the Omniverse Streaming Client once the SimulationApp has been crea
 All scripts provided in `omniisaacgymenvs/scripts` can be launched directly with `PYTHON_PATH`.
 
 To test out a task without RL in the loop, run the random policy script with:
-
-```bash
-PYTHON_PATH scripts/random_policy.py task=Cartpole
-```
-
-This script will sample random actions from the action space and apply these actions to your task without running any RL policies. Simulation should start automatically after launching the script, and will run indefinitely until terminated.
-
-
-To run a simple form of PPO from `rl_games`, use the single-threaded training script:
-
-```bash
-PYTHON_PATH scripts/rlgames_train.py task=Cartpole
-```
-
-This script creates an instance of the PPO runner in `rl_games` and automatically launches training and simulation. Once training completes (the total number of iterations have been reached), the script will exit. If running inference with `test=True checkpoint=<path/to/checkpoint>`, the script will run indefinitely until terminated. Note that this script will have limitations on interaction with the UI.
-
 
 ### Configuration and command line arguments
 
@@ -296,53 +280,4 @@ To train with multiple GPUs, use the following command, where `--proc_per_node` 
 PYTHON_PATH -m torch.distributed.run --nnodes=1 --nproc_per_node=2 scripts/rlgames_train.py headless=True task=Ant multi_gpu=True
 ```
 
-## Multi-Node Training
-
-To train across multiple nodes/machines, it is required to launch an individual process on each node.
-For the master node, use the following command, where `--proc_per_node` represents the number of available GPUs, and `--nnodes` represents the number of nodes:
-```bash
-PYTHON_PATH -m torch.distributed.run --nproc_per_node=2 --nnodes=2 --node_rank=0 --rdzv_id=123 --rdzv_backend=c10d --rdzv_endpoint=localhost:5555 scripts/rlgames_train.py headless=True task=Ant multi_gpu=True
-```
-
-Note that the port (`5555`) can be replaced with any other available port.
-
-For non-master nodes, use the following command, replacing `--node_rank` with the index of each machine:
-```bash
-PYTHON_PATH -m torch.distributed.run --nproc_per_node=2 --nnodes=2 --node_rank=1 --rdzv_id=123 --rdzv_backend=c10d --rdzv_endpoint=ip_of_master_machine:5555 scripts/rlgames_train.py headless=True task=Ant multi_gpu=True
-```
-
-For more details on multi-node training with PyTorch, please visit [here](https://pytorch.org/tutorials/intermediate/ddp_series_multinode.html). As mentioned in the PyTorch documentation, "multinode training is bottlenecked by inter-node communication latencies". When this latency is high, it is possible multi-node training will perform worse than running on a single node instance.
-
-## Tasks
-
-Source code for tasks can be found in `omniisaacgymenvs/tasks`. 
-
-Each task follows the frameworks provided in `omni.isaac.core` and `omni.isaac.gym` in Isaac Sim.
-
-Refer to [docs/framework/framework.md](docs/framework/framework.md) for how to create your own tasks.
-
-Full details on each of the tasks available can be found in the [RL examples documentation](docs/examples/rl_examples.md).
-
-
-## Demo
-
-We provide an interactable demo based on the `AnymalTerrain` RL example. In this demo, you can click on any of 
-the ANYmals in the scene to go into third-person mode and manually control the robot with your keyboard as follows:
-
-- `Up Arrow`: Forward linear velocity command
-- `Down Arrow`: Backward linear velocity command
-- `Left Arrow`: Leftward linear velocity command
-- `Right Arrow`: Rightward linear velocity command
-- `Z`: Counterclockwise yaw angular velocity command
-- `X`: Clockwise yaw angular velocity command
-- `C`: Toggles camera view between third-person and scene view while maintaining manual control
-- `ESC`: Unselect a selected ANYmal and yields manual control
-
-Launch this demo with the following command. Note that this demo limits the maximum number of ANYmals in the scene to 128.
-
-```
-PYTHON_PATH scripts/rlgames_demo.py task=AnymalTerrain num_envs=64 checkpoint=omniverse://localhost/NVIDIA/Assets/Isaac/4.0/Isaac/Samples/OmniIsaacGymEnvs/Checkpoints/anymal_terrain.pth
-```
-
-<img src="https://user-images.githubusercontent.com/34286328/184688654-6e7899b2-5847-4184-8944-2a96b129b1ff.gif" width="600" height="300"/>
 
