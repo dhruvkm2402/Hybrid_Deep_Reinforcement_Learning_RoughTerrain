@@ -59,11 +59,8 @@ The following error may appear during the initial installation. This error is ha
 ```
 ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
 ```
-### Required files
-Kindly ensure that you have the following files in order to replicate the code:
- - 
-
-### Running Rough Terrain Example
-
+Additional setup and example details can be found at https://github.com/isaac-sim/OmniIsaacGymEnvs
+### Running Rough Path Tracking using Hybrid Deep Reinforcement Learning Example
+ - Folder structure 
 
 
