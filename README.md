@@ -62,6 +62,7 @@ ERROR: pip's dependency resolver does not currently take into account all the pa
 Additional setup and example details can be found at https://github.com/isaac-sim/OmniIsaacGymEnvs
 ### Running Rough Path Tracking using Hybrid Deep Reinforcement Learning Example
  - Folder structure (Pointing out some necessary files in order to successfully train/evaluate the scenario)
+ '''
  - ├── omniisaacgymenvs
 │   ├── cfg
 │   │   ├── config.yaml
@@ -93,5 +94,6 @@ Additional setup and example details can be found at https://github.com/isaac-si
 ├── README.md
 ├── setup.py
 ├── terrainfile_link.txt
+'''
 
 
