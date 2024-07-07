@@ -61,6 +61,37 @@ ERROR: pip's dependency resolver does not currently take into account all the pa
 ```
 Additional setup and example details can be found at https://github.com/isaac-sim/OmniIsaacGymEnvs
 ### Running Rough Path Tracking using Hybrid Deep Reinforcement Learning Example
- - Folder structure 
+ - Folder structure (Pointing out some necessary files in order to successfully train/evaluate the scenario)
+ - ├── omniisaacgymenvs
+│   ├── cfg
+│   │   ├── config.yaml
+│   │   ├── task
+│   │   │   ├── HunterTaskE2E.yaml
+│   │   │   ├── HunterTask.yaml
+│   │   └── train
+│   │       ├── HunterTaskE2EPPO.yaml
+│   │       ├── HunterTaskE2ESAC.yaml
+│   │       ├── HunterTaskPPO.yaml
+│   ├── robots
+│   │   └── articulations
+│   │       ├── hunter.py
+│   ├── scripts
+│   │   ├── random_policy.py
+│   │   ├── rlgames_demo.py
+│   │   └── rlgames_train.py
+│   ├── tasks
+│   │   ├── HunterTask_PyTorchE2E.py
+│   │   ├── HunterTask_PyTorch.py
+│   ├── USD_Files
+│   │   └── hunter_aim4.usd
+│   ├── utils
+│   │   ├── task_util.py
+│   └── Waypoints
+│       ├── Austin_centerline2.csv
+│       ├── BrandsHatch_centerline.csv
+│       └── Silverstone_centerline.csv
+├── README.md
+├── setup.py
+├── terrainfile_link.txt
 
 
