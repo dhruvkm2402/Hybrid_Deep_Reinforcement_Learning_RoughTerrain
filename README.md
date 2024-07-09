@@ -126,8 +126,7 @@ if isinstance(next_obs, dict):
 ```
 PYTHON_PATH scripts/rlgames_train.py task=HunterTaskE2E train=HunterTaskE2ESAC headless=True
 ```
-The trained models are saved in the run folder
-To use tensorbaord
+The trained models are saved in the run folder and to use tensorbaord
 ```
 PYTHON_PATH -m tensorboard.main --logdir runs/EXPERIMENT_NAME/summaries
 ```
