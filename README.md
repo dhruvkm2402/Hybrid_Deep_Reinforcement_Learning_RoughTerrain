@@ -95,5 +95,73 @@ Additional setup and example details can be found at https://github.com/isaac-si
 ├── setup.py
 ├── terrainfile_link.txt
 ```
+- Config files: Simulation and DRL algorithm related parameters
+- hunter.py: Imports the USD file with a specified confiuration
+- Task files: HDRL (HunterTask_PyTorch.py) and End-to-End DRL (HunterTask_PyTorchE2E.py), These are scripts where states, actions, rewards, observations, etc. are defined.
+- hunter_aim4.usd: USD file of the robot AgileX HunterSE
+- task_util.py: Define task keys for running training and evaluation commands
+- terrainfile_link.txt: Rough terrain USD file
+# Important: Make sure to replace the directory in task file for each of the waypoints and terrain as "home/your_username/..." and add the terrain USD file in USD_Files folder
+# Running the HDRL training (Be in the OmniIsaacGymEnvs/omniisaacgymenvs directory)
+'''
+PYTHON_PATH scripts/rlgames_train.py task=HunterTask headless=True
+'''
+# Running the End-toEnd DRL PPO training (Be in the OmniIsaacGymEnvs/omniisaacgymenvs directory)
+'''
+PYTHON_PATH scripts/rlgames_train.py task=HunterTaskE2E headless=True
+'''
+# Running the End-toEnd DRL SAC training (Be in the OmniIsaacGymEnvs/omniisaacgymenvs directory)
+- Also, running SAC gives an error, kindly change the sac_agent.py located in the following directory
+  '''
+   cd ~/.local/share/ov/pkg/isaac-sim-4.0.0/kit/python/lib/python3.10/site-packages/rl_games/algos_torch
+  '''
+and modify lines 494 - 497 to the following. The issue is reported here https://github.com/Denys88/rl_games/issues/263 
+'''
+if isinstance(next_obs, dict):    
+                next_obs_processed = next_obs['obs']
+                self.obs = next_obs_processed.clone()
+            else:
+                self.obs = next_obs.clone()
+'''   
+'''
+PYTHON_PATH scripts/rlgames_train.py task=HunterTaskE2E train=HunterTaskE2ESAC headless=True
+'''
+The trained models are saved in the run folder
+To use tensorbaord
+'''
+PYTHON_PATH -m tensorboard.main --logdir runs/EXPERIMENT_NAME/summaries
+'''
+In order to evaluate the trained agents run the following code as per the task
+'''
+PYTHON_PATH scripts/rlgames_train.py task=Ant checkpoint=runs/Experiment_Name/nn/Experiment_name.pth test=True num_envs=64
+'''
 
+# Acknowledgements
+We'd like to acknowledge the following references:
+'''
+@misc{makoviychuk2021isaac,
+      title={Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning}, 
+      author={Viktor Makoviychuk and Lukasz Wawrzyniak and Yunrong Guo and Michelle Lu and Kier Storey and Miles Macklin and David Hoeller and Nikita Rudin and Arthur Allshire and Ankur Handa and Gavriel State},
+      year={2021},
+      journal={arXiv preprint arXiv:2108.10470}
+}
+'''
+'''
+@misc{rudin2021learning,
+      title={Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning}, 
+      author={Nikita Rudin and David Hoeller and Philipp Reist and Marco Hutter},
+      year={2021},
+      journal = {arXiv preprint arXiv:2109.11978}
+}
+'''
+'''
+@unknown{unknown,
+author = {Sakai, Atsushi and Ingram, Daniel and Dinius, Joseph and Chawla, Karan and Raffin, Antonin and Paques, Alexis},
+year = {2018},
+month = {08},
+pages = {},
+title = {PythonRobotics: a Python code collection of robotics algorithms}
+}
+https://github.com/AtsushiSakai/PythonRobotics
+'''
 
