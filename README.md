@@ -1,4 +1,4 @@
-## About this repository
+# About this repository
  We demonstrate the effectiveness of using Hybrid Deep Reinforcement Learning architecture for rough terrain navigation of an ackermann-steered platform called AgileX HunterSE. The algorithm combines DRL and LQR  controller and is deployed on NVIDIA's Isaac Sim simulator. 
  Following are the instructions to replicate the scenario. 
 
@@ -101,16 +101,16 @@ Additional setup and example details can be found at https://github.com/isaac-si
 - hunter_aim4.usd: USD file of the robot AgileX HunterSE
 - task_util.py: Define task keys for running training and evaluation commands
 - terrainfile_link.txt: Rough terrain USD file
-# Important: Make sure to replace the directory in task file for each of the waypoints and terrain as "home/your_username/..." and add the terrain USD file in USD_Files folder
-# Running the HDRL training (Be in the OmniIsaacGymEnvs/omniisaacgymenvs directory)
+### Important: Make sure to replace the directory in task file for each of the waypoints and terrain as "home/your_username/..." and add the terrain USD file in USD_Files folder
+### Running the HDRL training (Be in the OmniIsaacGymEnvs/omniisaacgymenvs directory)
 '''
 PYTHON_PATH scripts/rlgames_train.py task=HunterTask headless=True
 '''
-# Running the End-toEnd DRL PPO training (Be in the OmniIsaacGymEnvs/omniisaacgymenvs directory)
+### Running the End-toEnd DRL PPO training (Be in the OmniIsaacGymEnvs/omniisaacgymenvs directory)
 '''
 PYTHON_PATH scripts/rlgames_train.py task=HunterTaskE2E headless=True
 '''
-# Running the End-toEnd DRL SAC training (Be in the OmniIsaacGymEnvs/omniisaacgymenvs directory)
+### Running the End-toEnd DRL SAC training (Be in the OmniIsaacGymEnvs/omniisaacgymenvs directory)
 - Also, running SAC gives an error, kindly change the sac_agent.py located in the following directory
   '''
    cd ~/.local/share/ov/pkg/isaac-sim-4.0.0/kit/python/lib/python3.10/site-packages/rl_games/algos_torch
@@ -136,7 +136,7 @@ In order to evaluate the trained agents run the following code as per the task
 PYTHON_PATH scripts/rlgames_train.py task=Ant checkpoint=runs/Experiment_Name/nn/Experiment_name.pth test=True num_envs=64
 '''
 
-# Acknowledgements
+### Acknowledgements
 We'd like to acknowledge the following references:
 '''
 @misc{makoviychuk2021isaac,
