@@ -101,7 +101,7 @@ Additional setup and example details can be found at https://github.com/isaac-si
 - hunter_aim4.usd: USD file of the robot AgileX HunterSE
 - task_util.py: Define task keys for running training and evaluation commands
 - terrainfile_link.txt: Rough terrain USD file
-### Important: Make sure to replace the directory in task file for each of the waypoints and terrain as "home/your_username/..." and add the terrain USD file in USD_Files folder
+#### Important: Make sure to replace the directory in task file for each of the waypoints and terrain as "home/your_username/..." and add the terrain USD file in USD_Files folder
 ### Running the HDRL training (Be in the OmniIsaacGymEnvs/omniisaacgymenvs directory)
 ```
 PYTHON_PATH scripts/rlgames_train.py task=HunterTask headless=True
