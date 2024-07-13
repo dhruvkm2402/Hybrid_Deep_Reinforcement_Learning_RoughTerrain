@@ -4,13 +4,7 @@ Following video shows a brief overview of the paper
 
 https://github.com/user-attachments/assets/0e8949f2-107a-498f-9a26-709277927976
 
-
-Following are the instructions to replicate the scenario. 
- 
-
-https://github.com/dhruvkm2402/Hybrid_Deep_Reinforcement_Learning_RoughTerrain/assets/99369975/2c1b83c5-27fc-4368-8b76-4fa354ec7e06
-
-https://github.com/dhruvkm2402/Hybrid_Deep_Reinforcement_Learning_RoughTerrain/assets/99369975/998968f1-5e92-431b-b2b4-f48adca7ad45
+https://github.com/user-attachments/assets/a64402ac-769c-4d57-8587-7751d06d9b20
 
 I hope you find this research useful and would appreciate it if you cite it - Preprint is available here with more details (Will update it once published)
 ```
@@ -23,9 +17,7 @@ title = {Rough Terrain Path Tracking of an Ackermann Steered Platform using Hybr
 doi = {10.13140/RG.2.2.35242.02242}
 }
 ```
-
-
- 
+Following are the instructions to replicate the scenario. 
 # Omniverse Isaac Gym Reinforcement Learning Environments for Isaac Sim
 
 *PLEASE NOTE: Version 4.0.0 will be the last release of OmniIsaacGymEnvs. Moving forward, OmniIsaacGymEnvs will be merging with IsaacLab (https://github.com/isaac-sim/IsaacLab). All future updates will be available as part of the IsaacLab repository.*
