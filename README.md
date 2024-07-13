@@ -7,6 +7,7 @@ https://github.com/user-attachments/assets/0e8949f2-107a-498f-9a26-709277927976
 https://github.com/user-attachments/assets/a64402ac-769c-4d57-8587-7751d06d9b20
 
 I hope you find this research useful and would appreciate it if you cite it - Preprint is available here with more details (Will update it once published)
+Link: https://www.researchgate.net/publication/380245264_Rough_Terrain_Path_Tracking_of_an_Ackermann_Steered_Platform_using_Hybrid_Deep_Reinforcement_Learning
 ```
 @unknown{unknown,
 author = {Mehta, Dhruv and Salvi, Ameya and Krovi, Venkat},
