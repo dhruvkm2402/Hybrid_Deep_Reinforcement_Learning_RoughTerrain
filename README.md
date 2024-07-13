@@ -181,4 +181,17 @@ title = {PythonRobotics: a Python code collection of robotics algorithms}
 }
 https://github.com/AtsushiSakai/PythonRobotics
 ```
+```
+@INPROCEEDINGS{9981913,
+  author={Baek, Donghoon and Purushottam, Amartya and Ramos, Joao},
+  booktitle={2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
+  title={Hybrid LMC: Hybrid Learning and Model-based Control for Wheeled Humanoid Robot via Ensemble Deep Reinforcement Learning}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={9347-9354},
+  keywords={Deep learning;Training;Uncertainty;Torque;Regulators;Humanoid robots;Reinforcement learning},
+  doi={10.1109/IROS47612.2022.9981913}}
+
+```
 
