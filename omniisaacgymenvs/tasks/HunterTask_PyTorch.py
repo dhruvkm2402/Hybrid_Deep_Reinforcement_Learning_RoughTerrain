@@ -376,7 +376,7 @@ class HunterTask(RLTask):
         
         
         
-        # Apply ackermann gemoetry
+        # Apply ackermann geometry
         
         self.delta_out = torch.atan(0.608*torch.tan(self.position[:,self._front_steer_joint_idx])/
                                     (0.608 + 0.5*0.554*torch.tan(self.position[:,self._front_steer_joint_idx])))
