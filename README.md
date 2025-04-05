@@ -21,7 +21,9 @@ Link: https://www.researchgate.net/publication/380245264_Rough_Terrain_Path_Trac
   doi={10.1109/AIM55361.2024.10636992}}
 
 ```
-Following are the instructions to replicate the scenario. 
+## Note: Everything has been upgraded to the latest Isaac Lab framework and has been deployed on Isaac Sim 4.5.0
+Link: https://github.com/dhruvkm2402/Hybrid_DRL_Deployments
+Following are the instructions to replicate the scenario in OmniIsaacGymEnvs and Isaac Sim 4.0. (Now deprecated) 
 # Omniverse Isaac Gym Reinforcement Learning Environments for Isaac Sim
 
 *PLEASE NOTE: Version 4.0.0 will be the last release of OmniIsaacGymEnvs. Moving forward, OmniIsaacGymEnvs will be merging with IsaacLab (https://github.com/isaac-sim/IsaacLab). All future updates will be available as part of the IsaacLab repository.*
